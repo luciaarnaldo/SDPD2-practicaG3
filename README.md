@@ -57,11 +57,6 @@ Antes de comenzar, asegúrate de disponer de los siguientes requisitos en tu má
 * Gestor de entornos virtuales `venv`
 
 
-### 1. Clonar el repositorio
-```bash
-git clone [https://github.com/tu-usuario/SDPD2-practica-final.git](https://github.com/tu-usuario/SDPD2-practica-final.git)
-cd SDPD2-practica-final
-
 ## Autores
 * Lucía Arnaldo Cuevas
 * Jessica García Blanco
