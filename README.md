@@ -11,7 +11,7 @@ El código fuente se organiza en módulos independientes para cada una de las fa
 
 * **`dag_tripadvisor.py`**: Contiene el código fuente principal que implementa el DAG utilizando la TaskFlow API de Airflow.
 * **`config.toml`**: Archivo de configuración externa que centraliza las rutas de datos y parámetros de conexión a Kafka, permitiendo modificar el comportamiento sin alterar el código fuente.
-* **`tripadvisor_european_restaurants.csv`**: Dataset original en formato CSV utilizado como datos de entrada para el pipeline.
+* **`tripadvisor_european_restaurants.csv`**: Dataset original en formato CSV utilizado como datos de entrada para el pipeline. El enlace al dataset es el siguiente: https://www.kaggle.com/datasets/stefanoleone992/tripadvisor-european-restaurants/data 
 * **`EDA_TripAdvisor_European_restaurants.ipynb`**: Código utilizado para el análisis exploratorio de datos del dataset original.
 * **`resultados_limpios.parquet`**: Archivo de salida optimizado en formato Parquet generado tras la ejecución, limpieza y transformación del pipeline.
 
