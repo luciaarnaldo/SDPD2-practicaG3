@@ -77,12 +77,6 @@ python3 kafka-producer-confluent.py
 
 # Ejecutar el consumidor de consola para verificar la recepción de claves y valores
 python3 kafka-consumer-confluent.py
-## Requisitos Previos
-
-* **Python 3.11+** instalado
-* **Apache Kafka** levantado y accesible localmente en el puerto `localhost:9092`
-* **Apache Airflow** instalado y configurado para ejecutar el servidor web (por defecto en `localhost:8080`)
-* Gestor de entornos virtuales `venv`
 
 # Crear el entorno virtual para PySpark
 python3 -m venv pyspark-411
@@ -96,12 +90,12 @@ pip install pyspark==4.1.1
 # Ejecutar el consumidor estructurado de Spark conectado al broker local
 python3 struct_kafka_consumer_local.py
 
-# Ver el contenido de los fragmentos de texto generados en la Consulta 1 (Modo Append)
+# Ver el contenido de los fragmentos de texto generados en la Consulta 1 (Modo append)
 cat salida1.txt/part-*
 
-# Ver el estado consolidado de los conteos de productos en la Consulta 2 (Modo Complete)
+# Ver el estado consolidado de los conteos de productos en la Consulta 2 (Modo complete)
 cat salida2.txt
-
+```
 ## Autores
 * Lucía Arnaldo Cuevas
 * Jessica García Blanco
