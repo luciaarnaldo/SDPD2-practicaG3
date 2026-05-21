@@ -41,20 +41,31 @@ El código fuente se organiza en módulos independientes para cada una de las fa
 
 
 ## Tecnologías Utilizadas
-
+* **Lenguaje Principal:** Python (v3.11+)
 * **Orquestación Batch:** Apache Airflow (TaskFlow API)
-* **Procesamiento en Streaming:** Apache Spark (Spark Structured Streaming)
+* **Procesamiento en Streaming:** Apache Spark v4.1.1 (Spark Structured Streaming)
 * **Mensajería Distribuida:** Apache Kafka (Confluent Kafka Client)
 * **Formatos de Almacenamiento y Configuración:** CSV, Parquet, TOML
 
 
+## Requisitos Previos
+
+Antes de comenzar, asegúrate de disponer de los siguientes requisitos en tu máquina local o entorno virtual:
+* **Python 3.11+** instalado
+* **Apache Kafka** levantado y accesible localmente en el puerto `localhost:9092`
+* **Apache Airflow** instalado y configurado para ejecutar el servidor web (por defecto en `localhost:8080`)
+* Gestor de entornos virtuales `venv`
+
+
+### 1. Clonar el repositorio
+```bash
+git clone [https://github.com/tu-usuario/SDPD2-practica-final.git](https://github.com/tu-usuario/SDPD2-practica-final.git)
+cd SDPD2-practica-final
+
 ## Autores
-Lucía Arnaldo Cuevas
-
-Jessica García Blanco
-
-Aitana García Herranz
-
-Carmen Liberal Jiménez
+* Lucía Arnaldo Cuevas
+* Jessica García Blanco
+* Aitana García Herranz
+* Carmen Liberal Jiménez
 
 
