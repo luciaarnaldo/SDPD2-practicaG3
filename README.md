@@ -47,7 +47,38 @@ El código fuente se organiza en módulos independientes para cada una de las fa
 * **Mensajería Distribuida:** Apache Kafka (Confluent Kafka Client)
 * **Formatos de Almacenamiento y Configuración:** CSV, Parquet, TOML
 
+# Guía de Ejecución del Proyecto
 
+## Fase 1: Orquestación con Apache Airflow
+
+1. Asegúrate de tener levantado tu servidor de Apache Airflow e inicializada la base de datos.
+2. Accede a la interfaz web a través del navegador en `localhost:8080`.
+3. Activa y lanza el DAG `dag_tripadvisor.py`. 
+
+> **Nota de rendimiento:** Debido a limitaciones de memoria RAM al ejecutar múltiples servicios en el entorno *localhost*, el procesamiento se encuentra optimizado a una muestra representativa de **30.000 registros** empleando el parámetro `nrows`.
+
+4. Verifica que el archivo de salida estructurado `resultados_limpios.parquet` se haya generado correctamente en la ruta correspondiente.
+
+## Fase 2: Streaming de Datos
+
+### 1. Carga de Datos en Apache Kafka
+Configuración del entorno virtual e instalación del cliente de Kafka utilizando `venv`:
+
+```bash
+# Crear el entorno virtual para Kafka
+python3 -m venv kafka-env
+
+# Activar el entorno virtual
+source kafka-env/bin/activate
+
+# Instalar la librería cliente de Confluent Kafka
+pip install confluent-kafka
+
+# Ejecutar el productor para cargar eventos aleatorios en el topic "purchases"
+python3 kafka-producer-confluent.py
+
+# Ejecutar el consumidor de consola para verificar la recepción de claves y valores
+python3 kafka-consumer-confluent.py
 ## Requisitos Previos
 
 Antes de comenzar, asegúrate de disponer de los siguientes requisitos en tu máquina local o entorno virtual:
@@ -56,13 +87,27 @@ Antes de comenzar, asegúrate de disponer de los siguientes requisitos en tu má
 * **Apache Airflow** instalado y configurado para ejecutar el servidor web (por defecto en `localhost:8080`)
 * Gestor de entornos virtuales `venv`
 
+# Crear el entorno virtual para PySpark
+python3 -m venv pyspark-411
 
+# Activar el entorno virtual de Spark
+source pyspark-411/bin/activate
 
+# Instalar PySpark (versión 4.1.1)
+pip install pyspark==4.1.1
+
+# Ejecutar el consumidor estructurado de Spark conectado al broker local
+python3 struct_kafka_consumer_local.py
+
+# Ver el contenido de los fragmentos de texto generados en la Consulta 1 (Modo Append)
+cat salida1.txt/part-*
+
+# Ver el estado consolidado de los conteos de productos en la Consulta 2 (Modo Complete)
+cat salida2.txt
 
 ## Autores
 * Lucía Arnaldo Cuevas
 * Jessica García Blanco
 * Aitana García Herranz
 * Carmen Liberal Jiménez
-
 
