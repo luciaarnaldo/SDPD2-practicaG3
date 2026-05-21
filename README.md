@@ -62,7 +62,7 @@ Antes de comenzar, asegúrate de disponer de los siguientes requisitos en tu má
 
 1. Asegúrate de tener levantado el servidor de Apache Airflow e inicializada la base de datos.
 
-2. Accede a la interfaz web desde el navegador mediante:
+2. Accede a la interfaz web desde el navegador mediante: localhost:8080
 
 
 
