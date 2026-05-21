@@ -57,6 +57,17 @@ Antes de comenzar, asegúrate de disponer de los siguientes requisitos en tu má
 * Gestor de entornos virtuales `venv`
 
 
+
+## Fase 1 - Pipeline ETL con Apache Airflow
+
+1. Asegúrate de tener levantado el servidor de Apache Airflow e inicializada la base de datos.
+
+2. Accede a la interfaz web desde el navegador mediante:
+
+```bash
+localhost:8080
+
+
 ## Autores
 * Lucía Arnaldo Cuevas
 * Jessica García Blanco
