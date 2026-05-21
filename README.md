@@ -47,20 +47,19 @@ El código fuente se organiza en módulos independientes para cada una de las fa
 * **Mensajería Distribuida:** Apache Kafka (Confluent Kafka Client)
 * **Formatos de Almacenamiento y Configuración:** CSV, Parquet, TOML
 
-# Guía de Ejecución del Proyecto
+## Guía de Ejecución del Proyecto
 
-## Fase 1: Orquestación con Apache Airflow
+### Fase 1: Orquestación con Apache Airflow
 
-1. Asegúrate de tener levantado tu servidor de Apache Airflow e inicializada la base de datos.
-2. Accede a la interfaz web a través del navegador en `localhost:8080`.
-3. Activa y lanza el DAG `dag_tripadvisor.py`. 
+1. Levantar el servidor de Apache Airflow e iniciar la base de datos.
+2. Acceder a la interfaz web a través del navegador en `localhost:8080`.
+3. Activar y lanzar el DAG `dag_tripadvisor.py`. 
+4. Verificar que el archivo de salida estructurado `resultados_limpios.parquet` se haya generado correctamente en la ruta correspondiente.
 
-4. Verifica que el archivo de salida estructurado `resultados_limpios.parquet` se haya generado correctamente en la ruta correspondiente.
+### Fase 2: Streaming de Datos
 
-## Fase 2: Streaming de Datos
-
-### 1. Carga de Datos en Apache Kafka
-Configuración del entorno virtual e instalación del cliente de Kafka utilizando `venv`:
+#### 1. Carga de Datos en Apache Kafka
+Configuración del entorno virtual e instalación de Kafka utilizando `venv`:
 
 ```bash
 # Crear el entorno virtual para Kafka
@@ -77,7 +76,11 @@ python3 kafka-producer-confluent.py
 
 # Ejecutar el consumidor de consola para verificar la recepción de claves y valores
 python3 kafka-consumer-confluent.py
+```
+#### 2. Procesamiento de datos con Spark Structured Streaming
+Configuración del entorno de procesamiento distribuido e instalación de PySpark.
 
+```bash
 # Crear el entorno virtual para PySpark
 python3 -m venv pyspark-411
 
@@ -89,13 +92,16 @@ pip install pyspark==4.1.1
 
 # Ejecutar el consumidor estructurado de Spark conectado al broker local
 python3 struct_kafka_consumer_local.py
-
+```
+#### 3. Verificación de Resultados
+```bash
 # Ver el contenido de los fragmentos de texto generados en la Consulta 1 (Modo append)
-cat salida1.txt/part-*
+cat salida1.txt
 
 # Ver el estado consolidado de los conteos de productos en la Consulta 2 (Modo complete)
 cat salida2.txt
 ```
+
 ## Autores
 * Lucía Arnaldo Cuevas
 * Jessica García Blanco
