@@ -40,6 +40,14 @@ El código fuente se organiza en módulos independientes para cada una de las fa
 * **`struct_kafka_consumer_local.py`**: Configura un flujo de entrada asíncrono mediante Spark Structured Streaming para procesar los datos de Kafka desde el origen (`earliest`), exportando agregaciones y volcados de datos.
 
 
+## Tecnologías Utilizadas
+
+* **Orquestación Batch:** Apache Airflow (TaskFlow API)
+* **Procesamiento en Streaming:** Apache Spark (Spark Structured Streaming)
+* **Mensajería Distribuida:** Apache Kafka (Confluent Kafka Client)
+* **Formatos de Almacenamiento y Configuración:** CSV, Parquet, TOML
+
+
 ## Autores
 Lucía Arnaldo Cuevas
 
