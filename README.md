@@ -64,8 +64,6 @@ Antes de comenzar, asegúrate de disponer de los siguientes requisitos en tu má
 
 2. Accede a la interfaz web desde el navegador mediante:
 
-```bash
-localhost:8080
 
 
 ## Autores
