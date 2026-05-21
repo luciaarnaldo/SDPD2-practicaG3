@@ -55,8 +55,6 @@ El código fuente se organiza en módulos independientes para cada una de las fa
 2. Accede a la interfaz web a través del navegador en `localhost:8080`.
 3. Activa y lanza el DAG `dag_tripadvisor.py`. 
 
-> **Nota de rendimiento:** Debido a limitaciones de memoria RAM al ejecutar múltiples servicios en el entorno *localhost*, el procesamiento se encuentra optimizado a una muestra representativa de **30.000 registros** empleando el parámetro `nrows`.
-
 4. Verifica que el archivo de salida estructurado `resultados_limpios.parquet` se haya generado correctamente en la ruta correspondiente.
 
 ## Fase 2: Streaming de Datos
@@ -81,7 +79,6 @@ python3 kafka-producer-confluent.py
 python3 kafka-consumer-confluent.py
 ## Requisitos Previos
 
-Antes de comenzar, asegúrate de disponer de los siguientes requisitos en tu máquina local o entorno virtual:
 * **Python 3.11+** instalado
 * **Apache Kafka** levantado y accesible localmente en el puerto `localhost:9092`
 * **Apache Airflow** instalado y configurado para ejecutar el servidor web (por defecto en `localhost:8080`)
